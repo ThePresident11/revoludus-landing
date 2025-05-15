@@ -83,7 +83,7 @@ export default function HeroSection({ lang }: Props) {
       const sport = sports[index % sports.length];
       const ball = balls[index % balls.length];
       const user = users[index % users.length];
-      const module = modules[index % modules.length];
+      const mod = modules[index % modules.length];
 
       updateBall(ball);
       updateText("#sport-label", sport);
@@ -93,7 +93,7 @@ export default function HeroSection({ lang }: Props) {
       }, 2000);
 
       moduleTimeout = setTimeout(() => {
-        updateText("#module-label", module);
+        updateText("#module-label", mod);
       }, 4000);
 
       index++;

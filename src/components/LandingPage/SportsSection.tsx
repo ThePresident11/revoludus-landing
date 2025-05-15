@@ -19,7 +19,8 @@ type Sport = {
   numbers: string[];
 };
 
-const getText = (t: any, key: string) => t[key as keyof typeof t] ?? key;
+const getText = (t: Record<string, string>, key: string) =>
+  t[key as keyof typeof t] ?? key;
 
 const benefits: Benefit[] = [
   { modulId: "takticka_ploca", benefitId: "tereni" },

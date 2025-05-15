@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { FaChevronDown } from "react-icons/fa";
 import { smoothScrollTo } from "@/utils/scrollToId";
 import { title, subtitle, features } from "@/lib/i18n/translations/advantages";
@@ -20,7 +21,11 @@ const icons = [
   <LanguagesIcon />,
 ];
 
-export default function AdvantagesSection({ lang }: { lang: string }) {
+export default function AdvantagesSection({
+  lang,
+}: {
+  lang: SupportedLang | string;
+}) {
   const key = (lang in title ? lang : "en") as SupportedLang;
 
   return (
@@ -34,14 +39,13 @@ export default function AdvantagesSection({ lang }: { lang: string }) {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-7xl mx-auto">
-        {features[key].map((feature, index) => (
+        {(features[key] || []).map((feature, index) => (
           <div key={index} className="group card py-6">
             <div className="icon text-rev-orange group-hover:text-orange-700 mb-6">
-              {icons[index]}
+              {React.cloneElement(icons[index], { key: index })}
             </div>
 
             <h3 className="text-rev-blue group-hover:text-blue-800 transition-colors duration-300 h-20 flex items-center justify-center">
-              {" "}
               {feature.title}
             </h3>
 
