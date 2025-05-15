@@ -8,7 +8,6 @@ import {
 } from "react-icons/fa6";
 
 import { smoothScrollTo } from "@/utils/scrollToId";
-import { useTranslation } from "@/lib/i18n/useTranslation";
 import { SupportedLang } from "@/lib/i18n/LanguageSelector";
 
 import {
