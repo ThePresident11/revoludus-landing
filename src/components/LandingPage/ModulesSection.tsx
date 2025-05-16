@@ -81,19 +81,21 @@ export default function ModulesSection({ lang }: { lang: SupportedLang }) {
         className="max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-4 gap-8"
       >
         {/* Lista modula */}
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:col-span-3 text-sm md:text-base text-wrap balance">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:col-span-3 text-wrap balance">
           {moduleList.map((id) => (
             <div key={id} className="col-span-1">
               <div
-                onClick={() =>
-                  setActiveModule((prev) => (prev === id ? null : id))
-                }
                 onMouseEnter={() => {
                   if (window.innerWidth >= 1024) {
                     setActiveModule(id);
                   }
                 }}
-                className={`p-3 h-16 flex items-center justify-center text-center uppercase text-sm md:text-base font-bold tracking-wide border-2 rounded-2xl shadow-sm cursor-pointer transition-all duration-300 text-wrap balance truncate text-ellipsis max-w-full ${
+                onClick={() => {
+                  if (window.innerWidth < 1024) {
+                    setActiveModule((prev) => (prev === id ? null : id));
+                  }
+                }}
+                className={`p-3 h-16 flex items-center justify-center text-center uppercase text-base font-bold tracking-wide border-2 rounded-2xl shadow-sm cursor-pointer transition-all duration-300 text-wrap balance truncate text-ellipsis max-w-full ${
                   activeModule === id
                     ? "border-rev-orange text-rev-orange"
                     : "border-rev-blue text-rev-blue hover:border-rev-orange hover:text-rev-orange"
@@ -111,7 +113,7 @@ export default function ModulesSection({ lang }: { lang: SupportedLang }) {
                       alt={t[id].name}
                       className="mb-4 max-w-full h-auto rounded-xl shadow-md"
                     />
-                    <h3 className="text-lg text-rev-orange">{t[id].name}</h3>
+                    <h3 className="text-base text-rev-orange">{t[id].name}</h3>
                     <h4 className="max-w-md">{t[id].desc}</h4>
                   </div>
                 )}
