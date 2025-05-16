@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { smoothScrollTo } from "@/utils/scrollToId";
 import { FaChevronDown } from "react-icons/fa";
 
@@ -32,7 +32,7 @@ export default function HeroSection({ lang }: Props) {
     const selected = heroTranslations.hasOwnProperty(lang)
       ? heroTranslations[lang]
       : fallback;
-    const { sports, users, modules, cta } = selected;
+    const { sports, users, modules } = selected;
 
     let index = 0;
     let mainInterval: NodeJS.Timeout;

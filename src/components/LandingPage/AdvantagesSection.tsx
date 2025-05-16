@@ -13,12 +13,12 @@ import ProtectIcon from "@/components/icons/ProtectIcon";
 import LanguagesIcon from "@/components/icons/LanguagesIcon";
 
 const icons = [
-  <PuzzleIcon />,
-  <SportsIcon />,
-  <ProductIcon />,
-  <SpeedIcon />,
-  <ProtectIcon />,
-  <LanguagesIcon />,
+  <PuzzleIcon key="icon-0" />,
+  <SportsIcon key="icon-1" />,
+  <ProductIcon key="icon-2" />,
+  <SpeedIcon key="icon-3" />,
+  <ProtectIcon key="icon-4" />,
+  <LanguagesIcon key="icon-5" />,
 ];
 
 export default function AdvantagesSection({
