@@ -447,7 +447,7 @@ export default function PricingSection({ lang }: { lang: string }) {
             {/* Cijena i gumb */}
             <div className="mt-3 max-w-5xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4 bg-rev-orange/20 border border-rev-orange rounded-xl backdrop-blur-md px-4 py-2">
               <div className="basis-2/4 flex flex-row items-center justify-center md:justify-start">
-                <h5 className="whitespace-nowrap text-rev-blue">
+                <h5 className="text-rev-blue text-wrap balance truncate text-ellipsis max-w-full">
                   {totalPrice[key]} ({currency}) –{" "}
                   {billing[key][billingCycle as "monthly" | "yearly"]}:
                 </h5>

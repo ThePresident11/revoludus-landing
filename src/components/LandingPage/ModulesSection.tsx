@@ -81,7 +81,7 @@ export default function ModulesSection({ lang }: { lang: SupportedLang }) {
         className="max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-4 gap-8"
       >
         {/* Lista modula */}
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:col-span-3">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:col-span-3 text-wrap balance">
           {moduleList.map((id) => (
             <div key={id} className="col-span-1">
               <div
@@ -93,7 +93,7 @@ export default function ModulesSection({ lang }: { lang: SupportedLang }) {
                     setActiveModule(id);
                   }
                 }}
-                className={`p-3 h-16 flex items-center justify-center text-center uppercase text-base font-bold tracking-wide border-2 rounded-2xl shadow-sm cursor-pointer transition-all duration-300 ${
+                className={`p-3 h-16 flex items-center justify-center text-center uppercase text-base font-bold tracking-wide border-2 rounded-2xl shadow-sm cursor-pointer transition-all duration-300 text-wrap balance truncate text-ellipsis max-w-full ${
                   activeModule === id
                     ? "border-rev-orange text-rev-orange"
                     : "border-rev-blue text-rev-blue hover:border-rev-orange hover:text-rev-orange"
