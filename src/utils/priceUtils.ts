@@ -128,10 +128,7 @@ export const getCurrencySymbol = (cur: string): string => {
 };
 
 export const getIconSrc = (sport: string): string => {
-  const formatted = sport
-    .split(/[_\s]+/)
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-    .join("-");
+  const formatted = sport.replace(/_/g, "-").replace(/\s+/g, "-").toLowerCase();
   return `/images/${formatted}.svg`;
 };
 
