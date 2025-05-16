@@ -81,21 +81,26 @@ export default function ModulesSection({ lang }: { lang: SupportedLang }) {
         className="max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-4 gap-8"
       >
         {/* Lista modula */}
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:col-span-3 text-wrap balance">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-3 lg:col-span-3 lg:gap-x-4 lg:gap-y-8 text-wrap balance">
           {moduleList.map((id) => (
             <div key={id} className="col-span-1">
               <div
-                onMouseEnter={() => {
-                  if (window.innerWidth >= 1024) {
-                    setActiveModule(id);
-                  }
-                }}
                 onClick={() => {
                   if (window.innerWidth < 1024) {
                     setActiveModule((prev) => (prev === id ? null : id));
                   }
                 }}
-                className={`p-3 h-16 flex items-center justify-center text-center uppercase text-lg font-bold tracking-wide border-2 rounded-2xl shadow-sm cursor-pointer transition-all duration-300 text-wrap balance truncate text-ellipsis max-w-full ${
+                onMouseEnter={() => {
+                  if (window.innerWidth >= 1024) {
+                    setActiveModule(id);
+                  }
+                }}
+                onMouseLeave={() => {
+                  if (window.innerWidth >= 1024) {
+                    setActiveModule(null);
+                  }
+                }}
+                className={`p-3 h-16 flex items-center justify-center text-center uppercase text-base font-bold tracking-wide border-2 rounded-2xl shadow-sm cursor-pointer transition-all duration-300 text-wrap balance truncate text-ellipsis max-w-full ${
                   activeModule === id
                     ? "border-rev-orange text-rev-orange"
                     : "border-rev-blue text-rev-blue hover:border-rev-orange hover:text-rev-orange"
@@ -105,18 +110,18 @@ export default function ModulesSection({ lang }: { lang: SupportedLang }) {
               </div>
 
               {/* Prikaz ispod gumba za mobile/tablet */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:hidden">
+              <div className="block lg:hidden mt-2">
                 {activeModule === id && (
                   <div className="flex flex-col items-center justify-center border-2 border-rev-orange rounded-2xl p-6 text-center">
                     <div className="w-full max-w-[180px] aspect-square mb-4">
                       <img
                         src={`/images/${toImageName(id)}`}
                         alt={t[id].name}
-                        className="w-full h-full object-contain rounded-xl shadow-md"
                         loading="eager"
+                        className="w-full h-full object-contain rounded-xl shadow-md"
                       />
                     </div>
-                    <h3 className="text-rev-orange">{t[id].name}</h3>
+                    <h3 className="text-lg text-rev-orange">{t[id].name}</h3>
                     <h4 className="max-w-md">{t[id].desc}</h4>
                   </div>
                 )}
