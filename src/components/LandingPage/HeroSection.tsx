@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { smoothScrollTo } from "@/utils/scrollToId";
 import { FaChevronDown } from "react-icons/fa";
 
@@ -12,22 +12,23 @@ import { heroTranslations } from "@/lib/i18n/translations/hero";
 
 export default function HeroSection({ lang }: Props) {
   const ballRef = useRef<SVGImageElement>(null);
+  const [ballHref, setBallHref] = useState<string>("");
+
+  const balls = [
+    "americki-nogomet.svg",
+    "futsal.svg",
+    "hokej-na-ledu.svg",
+    "hokej-na-travi.svg",
+    "kosarka.svg",
+    "nogomet.svg",
+    "odbojka.svg",
+    "ragbi.svg",
+    "rukomet.svg",
+    "tenis.svg",
+    "vaterpolo.svg",
+  ];
 
   useEffect(() => {
-    const balls = [
-      "americki-nogomet.svg",
-      "futsal.svg",
-      "hokej-na-ledu.svg",
-      "hokej-na-travi.svg",
-      "kosarka.svg",
-      "nogomet.svg",
-      "odbojka.svg",
-      "ragbi.svg",
-      "rukomet.svg",
-      "tenis.svg",
-      "vaterpolo.svg",
-    ];
-
     const fallback = heroTranslations["en"];
     const selected = heroTranslations.hasOwnProperty(lang)
       ? heroTranslations[lang]
@@ -67,14 +68,10 @@ export default function HeroSection({ lang }: Props) {
     };
 
     const updateBall = (src: string) => {
-      const ball = ballRef.current;
-      if (!ball) return;
-
-      ball.style.opacity = "0";
+      setBallHref(""); // spriječi prikaz starih/prijelaznih slika
       fadeTimeout = setTimeout(() => {
-        ball.setAttribute("href", `/images/${src}`);
-        ball.style.opacity = "1";
-      }, 400);
+        setBallHref(`/images/${src}`);
+      }, 100); // kratak delay da se izbjegne "flash"
     };
 
     const startWave = () => {
@@ -155,22 +152,24 @@ export default function HeroSection({ lang }: Props) {
                 d="M97.26,411.48l23.94-42.23a9.18,9.18,0,0,1,8.16-4.75H257.61a9.39,9.39,0,0,1,9.21,11.16l-8.1,42.23a9.31,9.31,0,0,1-9.21,7.61H105.41a9.38,9.38,0,0,1-8.15-14Z"
                 fill="#202020"
               />
-              <image
-                ref={ballRef}
-                id="ball-head"
-                href="/images/Americki-nogomet.svg"
-                x="480"
-                y="0"
-                width="120"
-                height="120"
-                className="transition-opacity duration-400"
-              />
+              {ballHref && (
+                <image
+                  ref={ballRef}
+                  id="ball-head"
+                  href={ballHref}
+                  x="480"
+                  y="0"
+                  width="120"
+                  height="120"
+                  className="transition-opacity duration-400"
+                />
+              )}
             </svg>
           </div>
 
           <div
             id="sport-label"
-            className="text-label top-[7%] text-rev-black"
+            className="text-label top-[0%] lg:top-[7%] text-rev-black"
           ></div>
           <div
             id="user-label"

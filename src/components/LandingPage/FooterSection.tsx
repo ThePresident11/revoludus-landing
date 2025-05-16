@@ -77,7 +77,7 @@ export default function FooterSection({ lang }: { lang: SupportedLang }) {
             <p className="text-2xl text-center font-raleway uppercase font-bold tracking-wider mt-1">
               Revoludus
             </p>
-            <div className="mt-12 text-lg italic text-rev-orange text-wrap balance truncate text-ellipsis max-w-full">
+            <div className="mt-12 text-lg italic text-center text-rev-orange text-wrap balance truncate text-ellipsis max-w-full">
               {slogan[key]}
             </div>
           </div>
