@@ -128,8 +128,11 @@ export const getCurrencySymbol = (cur: string): string => {
 };
 
 export const getIconSrc = (sport: string): string => {
-  const sanitized = sport.replace(/_/g, "-").toLowerCase();
-  return `/images/${sanitized}.svg`;
+  const formatted = sport
+    .split(/[_\s]+/)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join("-");
+  return `/images/${formatted}.svg`;
 };
 
 function roundToEnding99(amount: number): string {
