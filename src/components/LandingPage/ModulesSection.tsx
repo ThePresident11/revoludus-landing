@@ -95,7 +95,7 @@ export default function ModulesSection({ lang }: { lang: SupportedLang }) {
                     setActiveModule((prev) => (prev === id ? null : id));
                   }
                 }}
-                className={`p-3 h-16 flex items-center justify-center text-center uppercase text-base font-bold tracking-wide border-2 rounded-2xl shadow-sm cursor-pointer transition-all duration-300 text-wrap balance truncate text-ellipsis max-w-full ${
+                className={`p-3 h-16 flex items-center justify-center text-center uppercase text-lg font-bold tracking-wide border-2 rounded-2xl shadow-sm cursor-pointer transition-all duration-300 text-wrap balance truncate text-ellipsis max-w-full ${
                   activeModule === id
                     ? "border-rev-orange text-rev-orange"
                     : "border-rev-blue text-rev-blue hover:border-rev-orange hover:text-rev-orange"
@@ -105,15 +105,18 @@ export default function ModulesSection({ lang }: { lang: SupportedLang }) {
               </div>
 
               {/* Prikaz ispod gumba za mobile/tablet */}
-              <div className="block lg:hidden mt-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:hidden">
                 {activeModule === id && (
                   <div className="flex flex-col items-center justify-center border-2 border-rev-orange rounded-2xl p-6 text-center">
-                    <img
-                      src={`/images/${toImageName(id)}`}
-                      alt={t[id].name}
-                      className="mb-4 max-w-full h-auto rounded-xl shadow-md"
-                    />
-                    <h3 className="text-base text-rev-orange">{t[id].name}</h3>
+                    <div className="w-full max-w-[180px] aspect-square mb-4">
+                      <img
+                        src={`/images/${toImageName(id)}`}
+                        alt={t[id].name}
+                        className="w-full h-full object-contain rounded-xl shadow-md"
+                        loading="eager"
+                      />
+                    </div>
+                    <h3 className="text-rev-orange">{t[id].name}</h3>
                     <h4 className="max-w-md">{t[id].desc}</h4>
                   </div>
                 )}
