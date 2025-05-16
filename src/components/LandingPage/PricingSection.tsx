@@ -262,10 +262,10 @@ export default function PricingSection({ lang }: { lang: string }) {
             <div className="basis-1/2 flex flex-row items-center justify-center md:justify-start text-rev-blue gap-2 flex-wrap">
               <h5 className="whitespace-nowrap">{choosePackage[key]}:</h5>
               <div className="flex gap-1">
-                {["S", "M", "L", "XL", "XXL"].map((size) => (
+                {(["S", "M", "L", "XL", "XXL"] as const).map((size) => (
                   <button
                     key={size}
-                    onClick={() => setPackageSize(size as any)}
+                    onClick={() => setPackageSize(size)}
                     onMouseEnter={() => setTooltipVisible(size)}
                     onMouseLeave={() => setTooltipVisible(null)}
                     className={`relative btn-secondary w-14 text-sm px-4 py-1 ${

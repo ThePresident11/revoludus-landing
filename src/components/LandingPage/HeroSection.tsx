@@ -12,7 +12,6 @@ import { heroTranslations } from "@/lib/i18n/translations/hero";
 
 export default function HeroSection({ lang }: Props) {
   const ballRef = useRef<SVGImageElement>(null);
-  const [ctaText, setCtaText] = useState("Saznaj više");
 
   useEffect(() => {
     const balls = [
@@ -34,7 +33,6 @@ export default function HeroSection({ lang }: Props) {
       ? heroTranslations[lang]
       : fallback;
     const { sports, users, modules, cta } = selected;
-    setCtaText(cta);
 
     let index = 0;
     let mainInterval: NodeJS.Timeout;

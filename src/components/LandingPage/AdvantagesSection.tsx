@@ -44,7 +44,6 @@ export default function AdvantagesSection({
             <div className="icon text-rev-orange group-hover:text-orange-700 mb-6">
               {React.cloneElement(icons[index], { key: index })}
             </div>
-
             <h3 className="text-rev-blue group-hover:text-blue-800 transition-colors duration-300 h-20 flex items-center justify-center">
               {feature.title}
             </h3>
