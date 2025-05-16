@@ -15,17 +15,17 @@ export default function HeroSection({ lang }: Props) {
 
   useEffect(() => {
     const balls = [
-      "Americki-nogomet.svg",
-      "Futsal.svg",
-      "Hokej-na-ledu.svg",
-      "Hokej-na-travi.svg",
-      "Kosarka.svg",
-      "Nogomet.svg",
-      "Odbojka.svg",
-      "Ragbi.svg",
-      "Rukomet.svg",
-      "Tenis.svg",
-      "Vaterpolo.svg",
+      "americki-nogomet.svg",
+      "futsal.svg",
+      "hokej-na-ledu.svg",
+      "hokej-na-travi.svg",
+      "kosarka.svg",
+      "nogomet.svg",
+      "odbojka.svg",
+      "ragbi.svg",
+      "rukomet.svg",
+      "tenis.svg",
+      "vaterpolo.svg",
     ];
 
     const fallback = heroTranslations["en"];

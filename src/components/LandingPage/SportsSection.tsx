@@ -40,7 +40,7 @@ const benefits: Benefit[] = [
 const sports: Sport[] = [
   {
     id: "americki_nogomet",
-    image: "/images/Americki-nogomet.svg",
+    image: "/images/americki-nogomet.svg",
     size: "w-24 h-24",
     numbers: [
       "18",
@@ -59,7 +59,7 @@ const sports: Sport[] = [
   },
   {
     id: "futsal",
-    image: "/images/Futsal.svg",
+    image: "/images/futsal.svg",
     size: "w-20 h-20",
     numbers: [
       "12",
@@ -78,7 +78,7 @@ const sports: Sport[] = [
   },
   {
     id: "hokej_na_ledu",
-    image: "/images/Hokej-na-ledu.svg",
+    image: "/images/hokej-na-ledu.svg",
     size: "w-12 h-12",
     numbers: [
       "18",
@@ -97,7 +97,7 @@ const sports: Sport[] = [
   },
   {
     id: "hokej_na_travi",
-    image: "/images/Hokej-na-travi.svg",
+    image: "/images/hokej-na-travi.svg",
     size: "w-12 h-12",
     numbers: [
       "18",
@@ -116,7 +116,7 @@ const sports: Sport[] = [
   },
   {
     id: "kosarka",
-    image: "/images/Kosarka.svg",
+    image: "/images/kosarka.svg",
     size: "w-24 h-24",
     numbers: [
       "18",
@@ -135,7 +135,7 @@ const sports: Sport[] = [
   },
   {
     id: "nogomet",
-    image: "/images/Nogomet.svg",
+    image: "/images/nogomet.svg",
     size: "w-24 h-24",
     numbers: [
       "18",
@@ -154,7 +154,7 @@ const sports: Sport[] = [
   },
   {
     id: "odbojka",
-    image: "/images/Odbojka.svg",
+    image: "/images/odbojka.svg",
     size: "w-24 h-24",
     numbers: [
       "18",
@@ -173,7 +173,7 @@ const sports: Sport[] = [
   },
   {
     id: "ragbi",
-    image: "/images/Ragbi.svg",
+    image: "/images/ragbi.svg",
     size: "w-24 h-24",
     numbers: [
       "19",
@@ -192,7 +192,7 @@ const sports: Sport[] = [
   },
   {
     id: "rukomet",
-    image: "/images/Rukomet.svg",
+    image: "/images/rukomet.svg",
     size: "w-20 h-20",
     numbers: [
       "20",
@@ -211,7 +211,7 @@ const sports: Sport[] = [
   },
   {
     id: "tenis",
-    image: "/images/Tenis.svg",
+    image: "/images/tenis.svg",
     size: "w-12 h-12",
     numbers: [
       "21",
@@ -230,7 +230,7 @@ const sports: Sport[] = [
   },
   {
     id: "vaterpolo",
-    image: "/images/Vaterpolo.svg",
+    image: "/images/vaterpolo.svg",
     size: "w-24 h-24",
     numbers: [
       "22",

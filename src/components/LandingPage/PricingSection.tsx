@@ -367,8 +367,6 @@ export default function PricingSection({ lang }: { lang: string }) {
                   const isAutoInfo = autoInfoModules.has(modul);
                   const isBlockedRemoval = blockedRemovalModules.has(modul);
 
-                  const moduleIcon = getIconSrc(selectedSport);
-
                   return (
                     <div
                       key={modul}
@@ -407,10 +405,13 @@ export default function PricingSection({ lang }: { lang: string }) {
                         <div className="flex items-center justify-between w-full">
                           <div className="flex items-center space-x-2">
                             <img
-                              src={moduleIcon}
+                              src={getIconSrc(selectedSport)}
                               alt={selectedSport}
                               className="w-5 h-5"
-                            />
+                              onError={(e) =>
+                                (e.currentTarget.style.display = "none")
+                              }
+                            />{" "}
                             <span className="text-base font-semibold">
                               {getModuleLabel(modul)}
                             </span>
